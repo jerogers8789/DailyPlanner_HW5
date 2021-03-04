@@ -7,7 +7,7 @@ $("#currentDay").append(date);
 
 
 
-var timeOfday = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
+var timeOfday = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 updatetime();
 
 function updatetime() {
@@ -15,18 +15,11 @@ function updatetime() {
   for(var i = 0; i < timeOfday.length; i++) {
 
     if (parseInt(timeOfday[i]) > currentTime) {
-      $("#" + timeOfday[i]).attr("style", "background-color: #58ce7b");
-
-
-    }
+      $("#" + timeOfday[i]).attr("style", "background-color: #58ce7b");}
     else if (parseInt(timeOfday[i]) < currentTime) {
-      $("#" + timeOfday[i]).attr("style", "background-color: lightgray");
-
-    }
+      $("#" + timeOfday[i]).attr("style", "background-color: lightgray"); }
     else if (parseInt(timeOfday[i]) == currentTime) {
-      $("#" + timeOfday[i]).attr("style", "background-color: #fc665e");
-    
-    }
+      $("#" + timeOfday[i]).attr("style", "background-color: #fc665e"); }
   }
 }
 
