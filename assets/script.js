@@ -1,8 +1,3 @@
-
-var date = moment().format("MMM Do YY");
-
-$("#currentDay").append(date);
-
 var timeOfday = ["9", "10", "11", "12", "1", "2", "3", "4", "5"]
 updatetime();
 
@@ -10,26 +5,25 @@ function updatetime() {
   var currentTime = moment().format('H');
   for(var i = 0; i < timeOfday.length; i++) {
     if (parseInt(timeOfday[i]) > currentTime) {
-      $("#" + timeOfday[i]).attr("style", "background-color: white");}
+      document.getElementById("#" + timeOfday[i]).attr("style", "background-color: white");}
     else if (parseInt(timeOfday[i]) < currentTime) {
-      $("#" + timeOfday[i]).attr("style", "background-color: lightgray"); }
+      document.getElementById("#" + timeOfday[i]).attr("style", "background-color: lightgray"); }
     else if (parseInt(timeOfday[i]) == currentTime) {
-      $("#" + timeOfday[i]).attr("style", "background-color: chartreuse"); }
+      document.getElementById("#" + timeOfday[i]).attr("style", "background-color: chartreuse"); }
   }
 }
 
 $(".rowBtn").on("click", function() {
-    var timeOfday = $(this).parent().attr("id");
-    var textContent = $("input").val().trim();
-    localStorage.setItem(timeOfday, textContent);
-    console.log(timeOfday, textContent);
+  var timeOfday = document.getElementById(this).parent().attr("id");
+  var textContent = document.getElementById("input").val().trim();
+  localStorage.setItem(timeOfday, textContent);
 });
-$("#9am").children("input").val(localStorage.getItem("9am"));
-$("#10am").children("input").val(localStorage.getItem("10am"));
-$("#11am").children("input").val(localStorage.getItem("11am"));
-$("#12pm").children("input").val(localStorage.getItem("12pm"));
-$("#1pm").children("input").val(localStorage.getItem("1pm"));
-$("#2pm").children("input").val(localStorage.getItem("2pm"));
-$("#3pm").children("input").val(localStorage.getItem("3pm"));
-$("#4pm").children("input").val(localStorage.getItem("4pm"));
-$("#5pm").children("input").val(localStorage.getItem("5pm"));
+document.getElementById("#9").children("input").val(localStorage.getItem("#9"));
+document.getElementById("#10").children("input").val(localStorage.getItem("10"));
+document.getElementById("#11").children("input").val(localStorage.getItem("11"));
+document.getElementById("#12").children("input").val(localStorage.getItem("12"));
+document.getElementById("#1").children("input").val(localStorage.getItem("1"));
+document.getElementById("#2").children("input").val(localStorage.getItem("2"));
+document.getElementById("#3").children("input").val(localStorage.getItem("3"));
+document.getElementById("#4").children("input").val(localStorage.getItem("4"));
+document.getElementById("#5").children("input").val(localStorage.getItem("5"));
